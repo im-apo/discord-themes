@@ -1,0 +1,466 @@
+/**
+ * @name Void Nexus
+ * @description (Inspired By Hollowknight) A haunting monochrome theme with pale white/grey accents and ethereal animations
+ * @author Apo
+ * @version 1.0.0
+ * @source https://github.com/Im-Apo/discord-themes/
+ * @inspiration Hollow Knight
+ */
+
+:root {
+  /* Main Colors */
+  --background-primary: #0a0a0a;
+  --background-secondary: #0f0f0f;
+  --background-secondary-alt: #141414;
+  --background-tertiary: #191919;
+  --background-accent: #e0e0e0;
+  --background-floating: #1a1a1a;
+  
+  /* Text Colors */
+  --text-normal: #e4e4e7;
+  --text-muted: #a1a1aa;
+  --text-link: #f5f5f5;
+  --header-primary: #ffffff;
+  --header-secondary: #e4e4e7;
+  
+  /* Accent Colors */
+  --brand-experiment: #e0e0e0;
+  --brand-experiment-hover: #f0f0f0;
+  --brand-500: #e0e0e0;
+  
+  /* Status Colors */
+  --status-positive: #22c55e;
+  --status-warning: #f59e0b;
+  --status-danger: #ef4444;
+}
+
+/* ============================================
+   VOID GRADIENT BACKGROUND
+   ============================================ */
+.theme-dark {
+  --background-primary: #0a0a0a !important;
+  --background-secondary: #0f0f0f !important;
+  --background-tertiary: #191919 !important;
+}
+
+[class*="app-"],
+[class*="bg-"],
+body {
+  background: linear-gradient(135deg, #050505 0%, #101010 50%, #0d0d0d 100%) !important;
+}
+
+[class*="app-"]::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at top left, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(200, 200, 200, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: voidShift 20s ease infinite;
+}
+
+@keyframes voidShift {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+/* ============================================
+   SERVER LIST - PALE GLOW
+   ============================================ */
+[class*="wrapper-"][class*="guilds"],
+nav[aria-label="Servers"] {
+  background: linear-gradient(180deg, #0a0a0a 0%, #151515 100%) !important;
+}
+
+[class*="scroller-"][class*="guilds"],
+nav[aria-label="Servers"] > div {
+  background: transparent !important;
+}
+
+[class*="listItem-"] [class*="wrapper-"],
+[data-list-item-id*="guildsnav"] [class*="wrapper-"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15) !important;
+  position: relative;
+}
+
+[class*="listItem-"] [class*="wrapper-"]:hover,
+[data-list-item-id*="guildsnav"] [class*="wrapper-"]:hover {
+  transform: translateY(-4px) scale(1.05) !important;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.35), 0 0 15px rgba(200, 200, 200, 0.2) !important;
+}
+
+[class*="listItem-"][class*="selected"] [class*="wrapper-"],
+[data-list-item-id*="guildsnav"][aria-current="page"] [class*="wrapper-"] {
+  background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%) !important;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.6), 0 0 80px rgba(255, 255, 255, 0.3) !important;
+}
+
+[class*="listItem-"][class*="selected"] [class*="wrapper-"]::before,
+[data-list-item-id*="guildsnav"][aria-current="page"] [class*="wrapper-"]::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: linear-gradient(135deg, #ffffff, #c0c0c0, #ffffff);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(12px);
+  animation: voidPulse 3s ease-in-out infinite;
+}
+
+@keyframes voidPulse {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.1); opacity: 0.6; }
+}
+
+/* ============================================
+   CHANNEL SIDEBAR
+   ============================================ */
+[class*="sidebar-"][class*="container"],
+aside[aria-label*="channel"],
+[class*="privateChannels-"],
+[aria-label="Direct Messages"] {
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%) !important;
+  border-right: 2px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+[class*="container-"][class*="header"],
+header[class*="header-"] {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0%, rgba(200, 200, 200, 0.08) 100%) !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08) !important;
+}
+
+[class*="containerDefault"],
+[class*="channel-"][role="link"],
+[class*="listItem-"][class*="channel"],
+a[class*="link-"][href^="/channels/"],
+a[href^="/channels/@me/"] {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-radius: 8px !important;
+  margin: 2px 8px !important;
+  padding: 4px !important;
+  border-left: 3px solid transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="containerDefault"]:hover,
+[class*="channel-"][role="link"]:hover,
+[class*="listItem-"][class*="channel"]:hover,
+a[class*="link-"][href^="/channels/"]:hover,
+a[href^="/channels/@me/"]:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-left-color: #e0e0e0 !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15) !important;
+  transform: translateX(4px) !important;
+}
+
+[class*="modeSelected"],
+[class*="channel-"][aria-current="page"],
+[class*="listItem-"][class*="selected"],
+a[class*="link-"][href^="/channels/"][class*="selected"],
+a[href^="/channels/@me/"][class*="selected"] {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(200, 200, 200, 0.1) 100%) !important;
+  border-left: 3px solid #e0e0e0 !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25) !important;
+}
+
+[class*="container-"][class*="category"] h2,
+h2[class*="defaultColor"] {
+  color: #f5f5f5 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 8px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ============================================
+   CHAT AREA
+   ============================================ */
+[class*="chat-"],
+main[class*="chatContent"] {
+  background: rgba(10, 10, 10, 0.6) !important;
+}
+
+[class*="title-"][class*="container"],
+section[class*="title"] {
+  background: linear-gradient(90deg, rgba(20, 20, 20, 0.9) 0%, rgba(10, 10, 10, 0.9) 100%) !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.08) !important;
+}
+
+[class*="message-"] {
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  padding: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="message-"]:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.08) !important;
+}
+
+[class*="divider-"] {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ============================================
+   MESSAGE INPUT - ETHEREAL GLOW
+   ============================================ */
+[class*="scrollableContainer"] {
+  background: linear-gradient(135deg, rgba(25, 25, 25, 0.9) 0%, rgba(15, 15, 15, 0.9) 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1) !important;
+}
+
+[class*="scrollableContainer"]:focus-within {
+  border-color: #e0e0e0 !important;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), 0 0 15px rgba(200, 200, 200, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.05) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(200, 200, 200, 0.08) 100%) !important;
+}
+
+/* ============================================
+   MEMBER LIST
+   ============================================ */
+[class*="members-"],
+aside[aria-label*="Members"] {
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%) !important;
+  border-left: 2px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+[class*="member-"] {
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="member-"]:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15) !important;
+  transform: translateX(-4px) !important;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+button[class*="lookFilled"][class*="colorBrand"],
+button[class*="button-"][class*="colorBrand"] {
+  background: linear-gradient(135deg, #d0d0d0 0%, #e8e8e8 100%) !important;
+  color: #0a0a0a !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2) !important;
+}
+
+button[class*="lookFilled"][class*="colorBrand"]:hover,
+button[class*="button-"][class*="colorBrand"]:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3), 0 0 15px rgba(200, 200, 200, 0.2) !important;
+  background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%) !important;
+}
+
+/* ============================================
+   MODALS & POPOUTS
+   ============================================ */
+[class*="modal-"],
+[class*="root-"][class*="modal"] {
+  background: linear-gradient(135deg, #151515 0%, #0a0a0a 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 25px 60px rgba(255, 255, 255, 0.15) !important;
+}
+
+[class*="userPopout"],
+[class*="profilePanel"] {
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.98) 0%, rgba(10, 10, 10, 0.98) 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ============================================
+   VOICE PANEL
+   ============================================ */
+[class*="container-"][class*="panels"],
+section[class*="panels"] {
+  background: linear-gradient(90deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%) !important;
+  border-top: 2px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 -4px 15px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ============================================
+   SETTINGS
+   ============================================ */
+[class*="sidebarRegion"] {
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%) !important;
+  border-right: 2px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+[class*="contentRegion"] {
+  background: rgba(10, 10, 10, 0.8) !important;
+}
+
+[class*="item-"][class*="side"] {
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="item-"][class*="side"]:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateX(4px) !important;
+}
+
+[class*="selected"][class*="side"] {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(200, 200, 200, 0.1) 100%) !important;
+  border-left: 3px solid #e0e0e0 !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+/* ============================================
+   SCROLLBARS
+   ============================================ */
+::-webkit-scrollbar {
+  width: 14px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(20, 20, 20, 0.5) !important;
+  border-radius: 10px !important;
+  margin: 4px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c0c0c0 0%, #d8d8d8 100%) !important;
+  border-radius: 10px !important;
+  border: 3px solid rgba(20, 20, 20, 0.5) !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #d8d8d8 0%, #e8e8e8 100%) !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.35), 0 0 8px rgba(200, 200, 200, 0.15) !important;
+}
+
+/* ============================================
+   MENTIONS & LINKS
+   ============================================ */
+[class*="mention"] {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #f5f5f5 !important;
+  padding: 0 4px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+[class*="mention"]:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3) !important;
+}
+
+a[class*="anchor"] {
+  color: #e0e0e0 !important;
+}
+
+a[class*="anchor"]:hover {
+  color: #f5f5f5 !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4) !important;
+}
+
+/* ============================================
+   REACTIONS
+   ============================================ */
+[class*="reaction-"] {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="reaction-"]:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: #e0e0e0 !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.25) !important;
+  transform: scale(1.05) !important;
+}
+
+/* ============================================
+   CODE BLOCKS
+   ============================================ */
+code,
+[class*="hljs"] {
+  background: rgba(20, 20, 20, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ============================================
+   EMBEDS
+   ============================================ */
+[class*="embed-"] {
+  border-left: 4px solid #e0e0e0 !important;
+  background: rgba(20, 20, 20, 0.4) !important;
+}
+
+/* ============================================
+   SEARCH BAR
+   ============================================ */
+[class*="searchBar"] {
+  background: rgba(20, 20, 20, 0.9) !important;
+  border: 2px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+[class*="searchBar"]:focus-within {
+  border-color: #e0e0e0 !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ============================================
+   HAUNTING PARTICLE EFFECT (OPTIONAL)
+   ============================================ */
+[class*="app-"]::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.15), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.12), transparent),
+    radial-gradient(1px 1px at 80% 10%, rgba(255, 255, 255, 0.08), transparent),
+    radial-gradient(2px 2px at 90% 60%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 33% 50%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 75% 80%, rgba(255, 255, 255, 0.08), transparent);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  pointer-events: none;
+  z-index: 1;
+  animation: voidDrift 60s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes voidDrift {
+  0%, 100% { background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+}
