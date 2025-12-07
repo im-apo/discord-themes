@@ -4,7 +4,7 @@
 
 A curated collection of stunning cyberpunk-inspired Discord themes featuring vibrant neon glows, smooth animations, and immersive visual effects.
 
-[![Version](https://img.shields.io/badge/version-1.0.2-blue)](https://github.com/Im-Apo/discord-themes)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/Im-Apo/discord-themes)
 [![Discord](https://img.shields.io/badge/discord-themes-7289da)](https://discord.com)
 [![MIT License](https://img.shields.io/github/license/im-apo/discord-themes?&logo=github)](LICENSE)
 
@@ -93,14 +93,36 @@ Perfect for those who embrace the dark side of the Force
 
 ---
 
-### Attack on Titan Theme
+### Attack on Titan: Eren Theme
 **Scout Regiment Colors**
 
 Primary Color: Scout Blue (`#4682c8`) | Features: Survey Corps emblem watermark
 
-*Military-inspired with performance optimizations*
+*Vibrant blue accents with Attack on Titan background*
 
-Perfect for Attack on Titan fans
+Perfect for Eren fans and action enthusiasts
+
+---
+
+### Attack on Titan: Levi Theme
+**Steel & Discipline**
+
+Primary Color: Dark Blue/Steel (`#3c5a8c`) | Features: Levi-inspired aesthetics
+
+*Darker blue palette with military precision*
+
+Perfect for fans of humanity's strongest soldier
+
+---
+
+### Attack on Titan: Mikasa Theme
+**Rose & Strength**
+
+Primary Color: Pink/Rose (`#dc78a0`) | Features: Elegant pink accents
+
+*Feminine yet powerful with pink/rose color scheme*
+
+Perfect for Mikasa fans who appreciate strength and elegance
 
 </div>
 
@@ -123,6 +145,12 @@ All Nexus themes include:
 - 👻 **Ethereal Particle Effect** - Drifting light spots across the screen
 - 🕰️ **Slower Animations** - 3s pulse for a more haunting feel
 - 🌫️ **Softer Glows** - Misty, fog-like visual effects
+
+### Attack on Titan Themes Exclusive Features:
+- 🎮 **Customizable Variables** - Adjust server size, transparency, and more
+- 🏅 **Survey Corps Emblem** - Optional watermark overlay
+- ⚡ **Performance Optimized** - Zero blur for better FPS
+- 🖼️ **Custom Backgrounds** - Character-specific artwork
 
 ---
 
@@ -164,8 +192,12 @@ Some themes include customizable variables at the top of the CSS file:
 ```css
 @var range serverColumns "Server Columns: [default] = 1" [1, 1, 4, 1]
 @var range serverSize "Server Icon Size: [default] = 48px" [48, 30, 80, 2]
+@var range serverGap "Server Icon Gap: [default] = 8px" [8, 0, 20, 2]
 @var range chatTransparency "Chat Transparency: [default] = 0.7" [0.7, 0.3, 1.0, 0.05]
+@var range sidebarTransparency "Sidebar Transparency: [default] = 0.8" [0.8, 0.3, 1.0, 0.05]
+@var range borderBrightness "Border Brightness: [default] = 0.3" [0.3, 0, 1.0, 0.1]
 @var checkbox showEmblem "Show Survey Corps Emblem: [default] = Yes" 1
+@var checkbox compactMode "Compact Message Mode: [default] = No" 0
 ```
 
 ---
@@ -209,7 +241,9 @@ Some themes include customizable variables at the top of the CSS file:
 | **Void Nexus** | White/Grey | Low | Ethereal | Minimalist design |
 | **Galactic Empire** | Red/Grey | High | Military | Star Wars fans |
 | **Sith Order** | Crimson/Black | Very High | Dark & Powerful | Dark side enthusiasts |
-| **AOT Theme** | Blue | Medium | Military | Anime fans |
+| **AOT: Eren** | Blue | Medium | Heroic | Action fans |
+| **AOT: Levi** | Dark Blue/Steel | Medium-High | Disciplined | Levi fans |
+| **AOT: Mikasa** | Pink/Rose | Medium | Elegant & Strong | Mikasa fans |
 
 </div>
 
@@ -251,6 +285,7 @@ Primary:   #e0e0e0 (Pale White)
 Secondary: #c0c0c0 (Silver Grey)
 Background: #0a0a0a (True Black)
 ```
+
 ### Galactic Empire
 ```
 Primary:   #e31e24 (Empire Red)
@@ -265,12 +300,33 @@ Secondary: #dc143c (Blood Red)
 Background: #050000 (Pure Black)
 ```
 
+### Attack on Titan: Eren
+```
+Primary:   #4682c8 (Scout Blue)
+Secondary: #5a96dc (Lighter Blue)
+Background: #19232e (Dark Blue-Grey)
+```
+
+### Attack on Titan: Levi
+```
+Primary:   #3c5a8c (Steel Blue)
+Secondary: #506ea0 (Lighter Steel)
+Background: #0f1928 (Very Dark Blue)
+```
+
+### Attack on Titan: Mikasa
+```
+Primary:   #dc78a0 (Rose Pink)
+Secondary: #f08cb4 (Lighter Pink)
+Background: #231418 (Dark Rose)
+```
+
 ---
 
 ## 🔧 Performance
 
 All themes are optimized for performance:
-- **No blur effects** — Improves FPS
+- **No blur effects** — Improves FPS (especially AOT themes)
 - **Efficient CSS selectors** — Minimal performance impact
 - **Hardware-accelerated animations** — Smooth 60fps transitions
 - **Minimal opacity layers** — Reduced GPU usage
@@ -284,6 +340,7 @@ All themes are optimized for performance:
 - Some themes may have minor compatibility issues with certain Discord updates
 - Custom emojis may need additional styling in some themes
 - Streaming overlay may require adjustment
+- AOT themes use external background images that require internet connection
 
 ---
 
@@ -318,6 +375,12 @@ All files are licensed under the MIT license.
 - BetterDiscord team
 - Vencord developers
 - Discord theming community
+- L-Ratio for OperaGX theme base (used in AOT themes)
+
+**Inspirations:**
+- Hollow Knight (Void Nexus)
+- Star Wars franchise (Empire & Sith themes)
+- Attack on Titan anime series (AOT themes)
 
 </div>
 
