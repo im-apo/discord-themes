@@ -1,54 +1,92 @@
-# Nexus Themes Collection
+<div align="center">
+
+# 🎨 Nexus Themes Collection
 
 A curated collection of stunning cyberpunk-inspired Discord themes featuring vibrant neon glows, smooth animations, and immersive visual effects.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Discord](https://img.shields.io/badge/discord-themes-7289da)
-![License](https://img.shields.io/badge/license-MIT-green)
+<a href="https://github.com/Im-Apo/discord-themes/">
+  <img src="assets/nexus-logo.png" alt="Nexus Themes" width="200">
+</a>
+
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/Im-Apo/discord-themes)
+[![Discord](https://img.shields.io/badge/discord-themes-7289da)](https://discord.com)
+[![MIT License](https://img.shields.io/github/license/im-apo/discord-themes?&logo=github)](LICENSE)
+
+</div>
+
+---
 
 ## 🎨 Theme Showcase
 
+<div align="center">
+
 ### Neon Nexus
 **Pink & Cyan Cyberpunk**
-- Primary Color: Hot Pink (`#ff0080`)
-- Secondary Color: Cyan (`#00ffff`)
-- Vibe: Classic cyberpunk with vibrant neon aesthetics
-- Perfect for: Fans of retro-futuristic aesthetics
+
+Primary Color: Hot Pink (`#ff0080`) | Secondary Color: Cyan (`#00ffff`)
+
+*Classic cyberpunk with vibrant neon aesthetics*
+
+Perfect for fans of retro-futuristic design
+
+---
 
 ### Cyber Nexus
 **Purple & Blue Elegance**
-- Primary Color: Purple (`#8b5cf6`)
-- Secondary Color: Deep Purple (`#6d28d9`)
-- Vibe: Sleek and sophisticated with smooth gradients
-- Perfect for: Those who prefer a more refined cyberpunk look
+
+Primary Color: Purple (`#8b5cf6`) | Secondary Color: Deep Purple (`#6d28d9`)
+
+*Sleek and sophisticated with smooth gradients*
+
+Perfect for those who prefer a refined cyberpunk look
+
+---
 
 ### Ruby Nexus
 **Red & Black Intensity**
-- Primary Color: Crimson Red (`#dc0000`)
-- Secondary Color: Dark Red (`#8b0000`)
-- Vibe: Aggressive and powerful with deep shadows
-- Perfect for: Bold personalities who love dramatic contrasts
+
+Primary Color: Crimson Red (`#dc0000`) | Secondary Color: Dark Red (`#8b0000`)
+
+*Aggressive and powerful with deep shadows*
+
+Perfect for bold personalities who love dramatic contrasts
+
+---
 
 ### Solar Nexus
 **Orange & Red Warmth**
-- Primary Color: Vibrant Orange (`#ff6600`)
-- Secondary Color: Deep Orange-Red (`#dc3200`)
-- Vibe: Warm and energetic with sunset-inspired tones
-- Perfect for: Users seeking a warm, inviting atmosphere
+
+Primary Color: Vibrant Orange (`#ff6600`) | Secondary Color: Deep Orange-Red (`#dc3200`)
+
+*Warm and energetic with sunset-inspired tones*
+
+Perfect for users seeking a warm, inviting atmosphere
+
+---
 
 ### Void Nexus
 **Monochrome Mystery** *(Inspired by Hollow Knight)*
-- Primary Color: Pale White (`#e0e0e0`)
-- Secondary Color: Silver Grey (`#c0c0c0`)
-- Vibe: Haunting and ethereal with ghostly effects
-- Perfect for: Fans of minimalist, atmospheric aesthetics
+
+Primary Color: Pale White (`#e0e0e0`) | Secondary Color: Silver Grey (`#c0c0c0`)
+
+*Haunting and ethereal with ghostly effects*
+
+Perfect for fans of minimalist, atmospheric aesthetics
+
+---
 
 ### Attack on Titan Theme
 **Scout Regiment Colors**
-- Primary Color: Scout Blue (`#4682c8`)
-- Features: Survey Corps emblem watermark
-- Vibe: Military-inspired with performance optimizations
-- Perfect for: Attack on Titan fans
+
+Primary Color: Scout Blue (`#4682c8`) | Features: Survey Corps emblem watermark
+
+*Military-inspired with performance optimizations*
+
+Perfect for Attack on Titan fans
+
+</div>
+
+---
 
 ## ✨ Features
 
@@ -64,8 +102,11 @@ All Nexus themes include:
 - ⚡ **Smooth Transitions** - 0.2-0.3s easing on all interactions
 
 ### Void Nexus Exclusive Features:
+- 👻 **Ethereal Particle Effect** - Drifting light spots across the screen
 - 🕰️ **Slower Animations** - 3s pulse for a more haunting feel
 - 🌫️ **Softer Glows** - Misty, fog-like visual effects
+
+---
 
 ## 📦 Installation
 
@@ -87,6 +128,8 @@ All Nexus themes include:
 5. Place the `.theme.css` file in the folder
 6. Enable the theme
 
+---
+
 ## 🎮 Theme Customization
 
 Some themes include customizable variables at the top of the CSS file:
@@ -107,6 +150,8 @@ Some themes include customizable variables at the top of the CSS file:
 @var checkbox showEmblem "Show Survey Corps Emblem: [default] = Yes" 1
 ```
 
+---
+
 ## 🖼️ Screenshots
 
 *Screenshots coming soon! Each theme will have preview images showcasing:*
@@ -115,15 +160,27 @@ Some themes include customizable variables at the top of the CSS file:
 - Message input with focus state
 - Member list and modals
 
+---
+
 ## 🛠️ Compatibility
 
-- ✅ Discord Desktop (Windows, Mac, Linux)
-- ✅ BetterDiscord
-- ✅ Vencord
-- ⚠️ Discord Web (Limited functionality)
-- ❌ Discord Mobile (Not supported)
+<div align="center">
+
+| Platform | Status |
+|----------|--------|
+| Discord Desktop (Windows, Mac, Linux) | ✅ Fully Supported |
+| BetterDiscord | ✅ Fully Supported |
+| Vencord | ✅ Fully Supported |
+| Discord Web | ⚠️ Limited Functionality |
+| Discord Mobile | ❌ Not Supported |
+
+</div>
+
+---
 
 ## 📝 Theme Comparison
+
+<div align="center">
 
 | Theme | Color Scheme | Intensity | Atmosphere | Best For |
 |-------|-------------|-----------|------------|----------|
@@ -134,7 +191,13 @@ Some themes include customizable variables at the top of the CSS file:
 | **Void Nexus** | White/Grey | Low | Ethereal | Minimalist design |
 | **AOT Theme** | Blue | Medium | Military | Anime fans |
 
+</div>
+
+---
+
 ## 🎨 Color Palettes
+
+<div align="center">
 
 ### Neon Nexus
 ```
@@ -171,15 +234,21 @@ Secondary: #c0c0c0 (Silver Grey)
 Background: #0a0a0a (True Black)
 ```
 
+</div>
+
+---
+
 ## 🔧 Performance
 
 All themes are optimized for performance:
-- No blur effects (improves FPS)
-- Efficient CSS selectors
-- Hardware-accelerated animations
-- Minimal opacity layers
+- **No blur effects** — Improves FPS
+- **Efficient CSS selectors** — Minimal performance impact
+- **Hardware-accelerated animations** — Smooth 60fps transitions
+- **Minimal opacity layers** — Reduced GPU usage
 
 **Note:** Void Nexus includes an optional particle effect that may slightly impact performance on lower-end systems. This can be disabled by removing the `::after` pseudo-element.
+
+---
 
 ## 🐛 Known Issues
 
@@ -187,44 +256,68 @@ All themes are optimized for performance:
 - Custom emojis may need additional styling in some themes
 - Streaming overlay may require adjustment
 
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! If you'd like to:
-- Report bugs
-- Suggest new themes
-- Submit improvements
-- Add new features
+- 🐞 Report bugs
+- 💡 Suggest new themes
+- 🔧 Submit improvements
+- ✨ Add new features
 
 Please open an issue or submit a pull request.
 
+---
+
 ## 📄 License
 
-These themes are available under the MIT License. Feel free to modify and share!
+All files are licensed under the MIT license.
+
+[![MIT License](https://img.shields.io/github/license/im-apo/discord-themes?&logo=github)](LICENSE)
+
+---
 
 ## 🌟 Credits
 
-**Original Author:** Apo
+<div align="center">
+
+**Original Author:** Apo  
 **Theme Collection:** Nexus Series
-**Special Thanks:** 
+
+**Special Thanks:**
 - BetterDiscord team
 - Vencord developers
 - Discord theming community
 
+</div>
+
+---
+
 ## 🔗 Links
 
-- [BetterDiscord](https://betterdiscord.app/)
-- [Vencord](https://vencord.dev/)
-- [Discord](https://discord.com/)
+<div align="center">
+
+[BetterDiscord](https://betterdiscord.app/) • [Vencord](https://vencord.dev/) • [Discord](https://discord.com/)
+
+</div>
+
+---
 
 ## 💖 Support
 
+<div align="center">
+
 If you enjoy these themes:
-- ⭐ Star this repository
-- 🔄 Share with friends
-- 💬 Join our Discord community (link coming soon)
+
+⭐ **Star this repository**  
+🔄 **Share with friends**  
+💬 **Join our Discord community** (link coming soon)
 
 ---
 
 **Made with 💜 by the Discord theming community**
 
 *Last Updated: December 2025*
+
+</div>
