@@ -1,0 +1,526 @@
+/**
+ * @name Cyber Nexus
+ * @description A sleek dark theme with purple/blue accents and smooth animations
+ * @author Apo
+ * @version 1.0.0
+ * @source https://github.com/Im-Apo/discord-themes/
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Main Colors */
+  --background-primary: #0a0a15;
+  --background-secondary: #12121d;
+  --background-secondary-alt: #16161f;
+  --background-tertiary: #1a1a28;
+  --background-accent: #7c3aed;
+  --background-floating: #1c1c28;
+  --background-mobile-primary: #0a0a15;
+  --background-mobile-secondary: #12121d;
+  --background-modifier-hover: rgba(139, 92, 246, 0.08);
+  --background-modifier-active: rgba(139, 92, 246, 0.15);
+  --background-modifier-selected: rgba(139, 92, 246, 0.25);
+  --background-modifier-accent: rgba(139, 92, 246, 0.3);
+  
+  /* Text Colors */
+  --text-normal: #e4e4e7;
+  --text-muted: #a1a1aa;
+  --text-link: #a78bfa;
+  --header-primary: #ffffff;
+  --header-secondary: #e4e4e7;
+  --interactive-normal: #d4d4d8;
+  --interactive-hover: #f4f4f5;
+  --interactive-active: #ffffff;
+  --interactive-muted: #52525b;
+  
+  /* Accent Colors */
+  --brand-experiment: #8b5cf6;
+  --brand-experiment-hover: #7c3aed;
+  --brand-experiment-560: #6d28d9;
+  --brand-500: #8b5cf6;
+  --brand-560: #7c3aed;
+  
+  /* Channel Colors */
+  --channeltextarea-background: #1c1c28;
+  
+  /* Status Colors */
+  --status-positive: #22c55e;
+  --status-warning: #f59e0b;
+  --status-danger: #ef4444;
+  
+  /* Scrollbar */
+  --scrollbar-thin-thumb: #8b5cf6;
+  --scrollbar-thin-track: rgba(139, 92, 246, 0.1);
+  --scrollbar-auto-thumb: #8b5cf6;
+  --scrollbar-auto-track: rgba(139, 92, 246, 0.1);
+  
+  /* Borders */
+  --border-primary: #3f3f46;
+  --border-secondary: #8b5cf6;
+  
+  /* Deprecated variables that Discord still uses */
+  --deprecated-card-bg: #16161f;
+  --deprecated-card-editable-bg: rgba(139, 92, 246, 0.1);
+  --deprecated-store-bg: #0f0f1a;
+  --deprecated-quickswitcher-input-background: #1c1c28;
+  --deprecated-text-input-bg: #1c1c28;
+  --deprecated-text-input-border: #3f3f46;
+  --deprecated-text-input-border-hover: #8b5cf6;
+  
+  /* Input */
+  --input-background: #1c1c28;
+}
+
+/* ============================================
+   MASSIVE PURPLE GRADIENT BACKGROUND
+   ============================================ */
+.theme-dark {
+  --background-primary: #0a0a15 !important;
+  --background-secondary: #12121d !important;
+  --background-tertiary: #1a1a28 !important;
+}
+
+/* Main app background */
+[class*="app-"],
+[class*="bg-"],
+body {
+  background: linear-gradient(135deg, #0a0a15 0%, #1a0a2e 50%, #16001e 100%) !important;
+}
+
+/* Animated gradient overlay */
+[class*="app-"]::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(124, 58, 237, 0.25) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* ============================================
+   SERVER LIST - DARK PURPLE WITH GLOW
+   ============================================ */
+/* Target server list container */
+[class*="wrapper-"][class*="guilds"],
+nav[aria-label="Servers"] {
+  background: linear-gradient(180deg, #0d0416 0%, #1a0a2e 100%) !important;
+}
+
+/* Server list scroller */
+[class*="scroller-"][class*="guilds"],
+nav[aria-label="Servers"] > div {
+  background: transparent !important;
+}
+
+/* All server icons */
+[class*="listItem-"] [class*="wrapper-"],
+[data-list-item-id*="guildsnav"] [class*="wrapper-"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.4) !important;
+  position: relative;
+}
+
+[class*="listItem-"] [class*="wrapper-"]:hover,
+[data-list-item-id*="guildsnav"] [class*="wrapper-"]:hover {
+  transform: translateY(-4px) scale(1.05) !important;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.8) !important;
+}
+
+/* Selected server */
+[class*="listItem-"][class*="selected"] [class*="wrapper-"],
+[data-list-item-id*="guildsnav"][aria-current="page"] [class*="wrapper-"] {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%) !important;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 1), 0 0 80px rgba(139, 92, 246, 0.5) !important;
+}
+
+/* Glowing ring around selected server */
+[class*="listItem-"][class*="selected"] [class*="wrapper-"]::before,
+[data-list-item-id*="guildsnav"][aria-current="page"] [class*="wrapper-"]::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: linear-gradient(135deg, #8b5cf6, #c084fc, #8b5cf6);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.7;
+  filter: blur(10px);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.15); opacity: 0.9; }
+}
+
+/* ============================================
+   DM LIST & PRIVATE CHANNELS
+   ============================================ */
+/* DM list container */
+[class*="privateChannels-"],
+[aria-label="Direct Messages"] {
+  background: linear-gradient(180deg, rgba(26, 10, 46, 0.95) 0%, rgba(13, 4, 22, 0.95) 100%) !important;
+}
+
+/* Individual DM items using the new listItem component */
+[class*="listItem-"][class*="channel"],
+[class*="channel-"][role="link"],
+a[href^="/channels/@me/"] {
+  background: rgba(139, 92, 246, 0.05) !important;
+  border-radius: 8px !important;
+  margin: 2px 8px !important;
+  padding: 4px !important;
+  border-left: 3px solid transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="listItem-"][class*="channel"]:hover,
+[class*="channel-"][role="link"]:hover,
+a[href^="/channels/@me/"]:hover {
+  background: rgba(139, 92, 246, 0.2) !important;
+  border-left-color: #a78bfa !important;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3) !important;
+  transform: translateX(4px) !important;
+}
+
+/* Selected DM */
+[class*="listItem-"][class*="selected"],
+[class*="channel-"][aria-current="page"],
+a[href^="/channels/@me/"][class*="selected"] {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.4) 0%, rgba(167, 139, 250, 0.3) 100%) !important;
+  border-left: 3px solid #8b5cf6 !important;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5) !important;
+}
+
+/* ============================================
+   CHANNEL SIDEBAR - SERVER CHANNELS
+   ============================================ */
+/* Channel list sidebar */
+[class*="sidebar-"][class*="container"],
+aside[aria-label*="channel"] {
+  background: linear-gradient(180deg, rgba(26, 10, 46, 0.95) 0%, rgba(13, 4, 22, 0.95) 100%) !important;
+  border-right: 2px solid rgba(139, 92, 246, 0.4) !important;
+}
+
+/* Server header */
+[class*="container-"][class*="header"],
+header[class*="header-"] {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.25) 0%, rgba(124, 58, 237, 0.2) 100%) !important;
+  border-bottom: 2px solid rgba(139, 92, 246, 0.5) !important;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2) !important;
+}
+
+/* Channel items */
+[class*="containerDefault"],
+[class*="channel-"][role="link"],
+a[class*="link-"][href^="/channels/"] {
+  background: rgba(139, 92, 246, 0.05) !important;
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  border-left: 3px solid transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="containerDefault"]:hover,
+[class*="channel-"][role="link"]:hover,
+a[class*="link-"][href^="/channels/"]:hover {
+  background: rgba(139, 92, 246, 0.2) !important;
+  border-left-color: #a78bfa !important;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3) !important;
+  transform: translateX(4px) !important;
+}
+
+/* Selected channel */
+[class*="modeSelected"],
+[class*="channel-"][aria-current="page"],
+a[class*="link-"][href^="/channels/"][class*="selected"] {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.4) 0%, rgba(167, 139, 250, 0.3) 100%) !important;
+  border-left: 3px solid #8b5cf6 !important;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5) !important;
+}
+
+/* Category headers */
+[class*="container-"][class*="category"] h2,
+h2[class*="defaultColor"] {
+  color: #c4b5fd !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.6) !important;
+}
+
+/* ============================================
+   CHAT AREA
+   ============================================ */
+/* Main chat content */
+[class*="chat-"],
+main[class*="chatContent"] {
+  background: rgba(10, 10, 21, 0.6) !important;
+}
+
+/* Chat title bar */
+[class*="title-"][class*="container"],
+section[class*="title"] {
+  background: linear-gradient(90deg, rgba(26, 10, 46, 0.9) 0%, rgba(13, 4, 22, 0.9) 100%) !important;
+  border-bottom: 2px solid rgba(139, 92, 246, 0.4) !important;
+  box-shadow: 0 2px 10px rgba(139, 92, 246, 0.2) !important;
+}
+
+/* Messages */
+[class*="message-"] {
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  padding: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="message-"]:hover {
+  background: rgba(139, 92, 246, 0.08) !important;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.15) !important;
+}
+
+/* Message dividers */
+[class*="divider-"] {
+  border-color: rgba(139, 92, 246, 0.4) !important;
+}
+
+/* ============================================
+   MESSAGE INPUT - GLOWING PURPLE
+   ============================================ */
+/* Message input container */
+[class*="channelTextArea"],
+[class*="scrollableContainer"] {
+  background: linear-gradient(135deg, rgba(26, 10, 46, 0.9) 0%, rgba(13, 4, 22, 0.9) 100%) !important;
+  border: 2px solid rgba(139, 92, 246, 0.5) !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.2) !important;
+}
+
+[class*="channelTextArea"]:focus-within,
+[class*="scrollableContainer"]:focus-within {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.6), inset 0 0 20px rgba(139, 92, 246, 0.1) !important;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%) !important;
+}
+
+/* ============================================
+   MEMBER LIST
+   ============================================ */
+/* Members sidebar */
+[class*="members-"],
+aside[aria-label*="Members"] {
+  background: linear-gradient(180deg, rgba(26, 10, 46, 0.95) 0%, rgba(13, 4, 22, 0.95) 100%) !important;
+  border-left: 2px solid rgba(139, 92, 246, 0.3) !important;
+}
+
+/* Individual members using new listItem component */
+[class*="member-"] {
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="member-"]:hover {
+  background: rgba(139, 92, 246, 0.2) !important;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.3) !important;
+  transform: translateX(-4px) !important;
+}
+
+/* ============================================
+   SEARCH BAR
+   ============================================ */
+[class*="searchBar"] {
+  background: rgba(26, 10, 46, 0.9) !important;
+  border: 2px solid rgba(139, 92, 246, 0.4) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+[class*="searchBar"]:focus-within {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5) !important;
+  background: rgba(139, 92, 246, 0.15) !important;
+}
+
+/* ============================================
+   BUTTONS - PURPLE GRADIENT
+   ============================================ */
+/* Primary buttons */
+button[class*="lookFilled"][class*="colorBrand"],
+button[class*="button-"][class*="colorBrand"] {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%) !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4) !important;
+}
+
+button[class*="lookFilled"][class*="colorBrand"]:hover,
+button[class*="button-"][class*="colorBrand"]:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6) !important;
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%) !important;
+}
+
+/* ============================================
+   MODALS & POPOUTS
+   ============================================ */
+/* Modals */
+[class*="modal-"],
+[class*="root-"][class*="modal"] {
+  background: linear-gradient(135deg, #1a0a2e 0%, #0d0416 100%) !important;
+  border: 2px solid rgba(139, 92, 246, 0.5) !important;
+  box-shadow: 0 25px 60px rgba(139, 92, 246, 0.3) !important;
+}
+
+/* User popouts */
+[class*="userPopout"],
+[class*="profilePanel"] {
+  background: linear-gradient(135deg, rgba(26, 10, 46, 0.98) 0%, rgba(13, 4, 22, 0.98) 100%) !important;
+  border: 2px solid rgba(139, 92, 246, 0.5) !important;
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4) !important;
+}
+
+/* ============================================
+   VOICE PANEL
+   ============================================ */
+[class*="container-"][class*="panels"],
+section[class*="panels"] {
+  background: linear-gradient(90deg, rgba(26, 10, 46, 0.95) 0%, rgba(13, 4, 22, 0.95) 100%) !important;
+  border-top: 2px solid rgba(139, 92, 246, 0.5) !important;
+  box-shadow: 0 -4px 15px rgba(139, 92, 246, 0.2) !important;
+}
+
+/* ============================================
+   SETTINGS
+   ============================================ */
+/* Settings sidebar */
+[class*="sidebarRegion"] {
+  background: linear-gradient(180deg, rgba(26, 10, 46, 0.95) 0%, rgba(13, 4, 22, 0.95) 100%) !important;
+  border-right: 2px solid rgba(139, 92, 246, 0.4) !important;
+}
+
+/* Settings content */
+[class*="contentRegion"] {
+  background: rgba(10, 10, 21, 0.8) !important;
+}
+
+/* Settings items */
+[class*="item-"][class*="side"] {
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="item-"][class*="side"]:hover {
+  background: rgba(139, 92, 246, 0.2) !important;
+  transform: translateX(4px) !important;
+}
+
+[class*="selected"][class*="side"] {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.4) 0%, rgba(167, 139, 250, 0.3) 100%) !important;
+  border-left: 3px solid #8b5cf6 !important;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3) !important;
+  color: #ffffff !important;
+}
+
+/* ============================================
+   SCROLLBARS - PURPLE
+   ============================================ */
+::-webkit-scrollbar {
+  width: 14px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(26, 10, 46, 0.5) !important;
+  border-radius: 8px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b5cf6 0%, #6d28d9 100%) !important;
+  border-radius: 8px !important;
+  border: 2px solid rgba(26, 10, 46, 0.5) !important;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a78bfa 0%, #8b5cf6 100%) !important;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.8) !important;
+}
+
+/* ============================================
+   MENTIONS & LINKS
+   ============================================ */
+[class*="mention"] {
+  background: rgba(139, 92, 246, 0.25) !important;
+  color: #c4b5fd !important;
+  padding: 0 4px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+}
+
+[class*="mention"]:hover {
+  background: rgba(139, 92, 246, 0.4) !important;
+  color: #e9d5ff !important;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5) !important;
+}
+
+a[class*="anchor"] {
+  color: #a78bfa !important;
+}
+
+a[class*="anchor"]:hover {
+  color: #c4b5fd !important;
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.5) !important;
+}
+
+/* ============================================
+   REACTIONS
+   ============================================ */
+[class*="reaction-"] {
+  background: rgba(139, 92, 246, 0.15) !important;
+  border: 1px solid rgba(139, 92, 246, 0.4) !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="reaction-"]:hover {
+  background: rgba(139, 92, 246, 0.3) !important;
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5) !important;
+  transform: scale(1.05) !important;
+}
+
+/* ============================================
+   CODE BLOCKS
+   ============================================ */
+code,
+[class*="hljs"] {
+  background: rgba(26, 10, 46, 0.8) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.15) !important;
+}
+
+/* ============================================
+   EMBEDS
+   ============================================ */
+[class*="embed-"] {
+  border-left: 4px solid #8b5cf6 !important;
+  background: rgba(26, 10, 46, 0.4) !important;
+}
