@@ -217,8 +217,6 @@ Some themes include customizable variables at the top of the CSS file:
 
 ## 🎨 Color Palettes
 
-<div align="center">
-
 ### Neon Nexus
 ```
 Primary:   #ff0080 (Hot Pink)
@@ -266,8 +264,6 @@ Primary:   #8b0000 (Sith Crimson)
 Secondary: #dc143c (Blood Red)
 Background: #050000 (Pure Black)
 ```
-
-</div>
 
 ---
 
