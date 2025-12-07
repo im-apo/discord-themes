@@ -71,6 +71,28 @@ Perfect for fans of minimalist, atmospheric aesthetics
 
 ---
 
+### Galactic Empire
+**Imperial Star Wars Theme**
+
+Primary Color: Empire Red (`#e31e24`) | Secondary Color: Dark Grey (`#8b8b8b`)
+
+*Military-inspired with Imperial precision*
+
+Perfect for Star Wars fans who support the Empire
+
+---
+
+### Sith Order
+**Dark Side Star Wars Theme**
+
+Primary Color: Sith Crimson (`#8b0000`) | Secondary Color: Blood Red (`#dc143c`)
+
+*Deep, intense darkness with powerful crimson accents*
+
+Perfect for those who embrace the dark side of the Force
+
+---
+
 ### Attack on Titan Theme
 **Scout Regiment Colors**
 
@@ -185,6 +207,8 @@ Some themes include customizable variables at the top of the CSS file:
 | **Ruby Nexus** | Red/Black | Very High | Intense | Bold personalities |
 | **Solar Nexus** | Orange/Red | High | Warm | Vibrant atmospheres |
 | **Void Nexus** | White/Grey | Low | Ethereal | Minimalist design |
+| **Galactic Empire** | Red/Grey | High | Military | Star Wars fans |
+| **Sith Order** | Crimson/Black | Very High | Dark & Powerful | Dark side enthusiasts |
 | **AOT Theme** | Blue | Medium | Military | Anime fans |
 
 </div>
@@ -228,6 +252,19 @@ Background: #0a0500 (Very Dark Brown)
 Primary:   #e0e0e0 (Pale White)
 Secondary: #c0c0c0 (Silver Grey)
 Background: #0a0a0a (True Black)
+```
+### Galactic Empire
+```
+Primary:   #e31e24 (Empire Red)
+Secondary: #8b8b8b (Dark Grey)
+Background: #0a0a0f (Very Dark Blue-Black)
+```
+
+### Sith Order
+```
+Primary:   #8b0000 (Sith Crimson)
+Secondary: #dc143c (Blood Red)
+Background: #050000 (Pure Black)
 ```
 
 </div>
