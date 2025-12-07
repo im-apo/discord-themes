@@ -64,7 +64,6 @@ All Nexus themes include:
 - ⚡ **Smooth Transitions** - 0.2-0.3s easing on all interactions
 
 ### Void Nexus Exclusive Features:
-- 👻 **Ethereal Particle Effect** - Drifting light spots across the screen
 - 🕰️ **Slower Animations** - 3s pulse for a more haunting feel
 - 🌫️ **Softer Glows** - Misty, fog-like visual effects
 
