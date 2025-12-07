@@ -4,10 +4,6 @@
 
 A curated collection of stunning cyberpunk-inspired Discord themes featuring vibrant neon glows, smooth animations, and immersive visual effects.
 
-<a href="https://github.com/Im-Apo/discord-themes/">
-  <img src="assets/nexus-logo.png" alt="Nexus Themes" width="200">
-</a>
-
 [![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/Im-Apo/discord-themes)
 [![Discord](https://img.shields.io/badge/discord-themes-7289da)](https://discord.com)
 [![MIT License](https://img.shields.io/github/license/im-apo/discord-themes?&logo=github)](LICENSE)
