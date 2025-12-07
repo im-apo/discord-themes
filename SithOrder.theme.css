@@ -1,0 +1,464 @@
+/**
+ * @name Sith Order
+ * @description A dark Star Wars theme inspired by the Sith with deep reds, blacks, and crimson accents
+ * @author Apo
+ * @version 1.0.0
+ * @source https://github.com/Im-Apo/discord-themes/
+ */
+
+:root {
+  /* Main Colors - Sith Palette */
+  --background-primary: #050000;
+  --background-secondary: #0a0000;
+  --background-secondary-alt: #0f0505;
+  --background-tertiary: #140a0a;
+  --background-accent: #8b0000;
+  --background-floating: #0f0505;
+  
+  /* Text Colors */
+  --text-normal: #e4e4e7;
+  --text-muted: #a1a1aa;
+  --text-link: #dc143c;
+  --header-primary: #ff0000;
+  --header-secondary: #e4e4e7;
+  
+  /* Accent Colors - Sith Crimson */
+  --brand-experiment: #8b0000;
+  --brand-experiment-hover: #a00000;
+  --brand-500: #8b0000;
+  
+  /* Status Colors */
+  --status-positive: #22c55e;
+  --status-warning: #f59e0b;
+  --status-danger: #dc143c;
+}
+
+/* ============================================
+   DARK SIDE GRADIENT BACKGROUND
+   ============================================ */
+.theme-dark {
+  --background-primary: #050000 !important;
+  --background-secondary: #0a0000 !important;
+  --background-tertiary: #140a0a !important;
+}
+
+[class*="app-"],
+[class*="bg-"],
+body {
+  background: linear-gradient(135deg, #000000 0%, #0a0000 50%, #150000 100%) !important;
+}
+
+[class*="app-"]::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at top left, rgba(139, 0, 0, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(220, 20, 60, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at center, rgba(139, 0, 0, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: darkSideShift 25s ease infinite;
+}
+
+@keyframes darkSideShift {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+/* ============================================
+   SERVER LIST - SITH GLOW
+   ============================================ */
+[class*="wrapper-"][class*="guilds"],
+nav[aria-label="Servers"] {
+  background: linear-gradient(180deg, #000000 0%, #0f0000 100%) !important;
+}
+
+[class*="scroller-"][class*="guilds"],
+nav[aria-label="Servers"] > div {
+  background: transparent !important;
+}
+
+[class*="listItem-"] [class*="wrapper-"],
+[data-list-item-id*="guildsnav"] [class*="wrapper-"] {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.5) !important;
+  position: relative;
+}
+
+[class*="listItem-"] [class*="wrapper-"]:hover,
+[data-list-item-id*="guildsnav"] [class*="wrapper-"]:hover {
+  transform: translateY(-5px) scale(1.08) !important;
+  box-shadow: 0 0 35px rgba(139, 0, 0, 0.9), 0 0 20px rgba(220, 20, 60, 0.4) !important;
+}
+
+[class*="listItem-"][class*="selected"] [class*="wrapper-"],
+[data-list-item-id*="guildsnav"][aria-current="page"] [class*="wrapper-"] {
+  background: linear-gradient(135deg, #8b0000 0%, #a00000 100%) !important;
+  box-shadow: 0 0 50px rgba(139, 0, 0, 1), 0 0 100px rgba(139, 0, 0, 0.6) !important;
+}
+
+[class*="listItem-"][class*="selected"] [class*="wrapper-"]::before,
+[data-list-item-id*="guildsnav"][aria-current="page"] [class*="wrapper-"]::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: linear-gradient(135deg, #8b0000, #dc143c, #8b0000);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.8;
+  filter: blur(15px);
+  animation: sithPulse 3s ease-in-out infinite;
+}
+
+@keyframes sithPulse {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.6;
+    filter: blur(15px);
+  }
+  50% { 
+    transform: scale(1.2); 
+    opacity: 0.95;
+    filter: blur(20px);
+  }
+}
+
+/* ============================================
+   CHANNEL SIDEBAR
+   ============================================ */
+[class*="sidebar-"][class*="container"],
+aside[aria-label*="channel"],
+[class*="privateChannels-"],
+[aria-label="Direct Messages"] {
+  background: linear-gradient(180deg, rgba(15, 0, 0, 0.98) 0%, rgba(5, 0, 0, 0.98) 100%) !important;
+  border-right: 2px solid rgba(139, 0, 0, 0.5) !important;
+}
+
+[class*="container-"][class*="header"],
+header[class*="header-"] {
+  background: linear-gradient(90deg, rgba(139, 0, 0, 0.3) 0%, rgba(220, 20, 60, 0.2) 100%) !important;
+  border-bottom: 2px solid rgba(139, 0, 0, 0.6) !important;
+  box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3) !important;
+}
+
+[class*="containerDefault"],
+[class*="channel-"][role="link"],
+[class*="listItem-"][class*="channel"],
+a[class*="link-"][href^="/channels/"],
+a[href^="/channels/@me/"] {
+  background: rgba(139, 0, 0, 0.08) !important;
+  border-radius: 8px !important;
+  margin: 2px 8px !important;
+  padding: 4px !important;
+  border-left: 3px solid transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+[class*="containerDefault"]:hover,
+[class*="channel-"][role="link"]:hover,
+[class*="listItem-"][class*="channel"]:hover,
+a[class*="link-"][href^="/channels/"]:hover,
+a[href^="/channels/@me/"]:hover {
+  background: rgba(139, 0, 0, 0.25) !important;
+  border-left-color: #dc143c !important;
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.4) !important;
+  transform: translateX(5px) !important;
+}
+
+[class*="modeSelected"],
+[class*="channel-"][aria-current="page"],
+[class*="listItem-"][class*="selected"],
+a[class*="link-"][href^="/channels/"][class*="selected"],
+a[href^="/channels/@me/"][class*="selected"] {
+  background: linear-gradient(90deg, rgba(139, 0, 0, 0.5) 0%, rgba(220, 20, 60, 0.3) 100%) !important;
+  border-left: 3px solid #dc143c !important;
+  box-shadow: 0 0 25px rgba(139, 0, 0, 0.6) !important;
+}
+
+[class*="container-"][class*="category"] h2,
+h2[class*="defaultColor"] {
+  color: #dc143c !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2.5px !important;
+  text-shadow: 0 0 20px rgba(139, 0, 0, 0.8), 0 0 10px rgba(220, 20, 60, 0.5) !important;
+  font-family: 'Impact', 'Arial Black', sans-serif !important;
+}
+
+/* ============================================
+   CHAT AREA
+   ============================================ */
+[class*="chat-"],
+main[class*="chatContent"] {
+  background: rgba(5, 0, 0, 0.7) !important;
+}
+
+[class*="title-"][class*="container"],
+section[class*="title"] {
+  background: linear-gradient(90deg, rgba(15, 0, 0, 0.95) 0%, rgba(5, 0, 0, 0.95) 100%) !important;
+  border-bottom: 2px solid rgba(139, 0, 0, 0.5) !important;
+  box-shadow: 0 2px 15px rgba(139, 0, 0, 0.3) !important;
+}
+
+[class*="message-"] {
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  padding: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="message-"]:hover {
+  background: rgba(139, 0, 0, 0.1) !important;
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.2) !important;
+}
+
+[class*="divider-"] {
+  border-color: rgba(139, 0, 0, 0.5) !important;
+}
+
+/* ============================================
+   MESSAGE INPUT - DARK SIDE GLOW
+   ============================================ */
+[class*="scrollableContainer"] {
+  background: linear-gradient(135deg, rgba(15, 0, 0, 0.95) 0%, rgba(10, 0, 0, 0.95) 100%) !important;
+  border: 2px solid rgba(139, 0, 0, 0.6) !important;
+  border-radius: 18px !important;
+  transition: all 0.4s ease !important;
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.3) !important;
+}
+
+[class*="scrollableContainer"]:focus-within {
+  border-color: #8b0000 !important;
+  box-shadow: 0 0 40px rgba(139, 0, 0, 0.8), 0 0 20px rgba(220, 20, 60, 0.4), inset 0 0 30px rgba(139, 0, 0, 0.15) !important;
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.3) 0%, rgba(220, 20, 60, 0.15) 100%) !important;
+}
+
+/* ============================================
+   MEMBER LIST
+   ============================================ */
+[class*="members-"],
+aside[aria-label*="Members"] {
+  background: linear-gradient(180deg, rgba(15, 0, 0, 0.98) 0%, rgba(5, 0, 0, 0.98) 100%) !important;
+  border-left: 2px solid rgba(139, 0, 0, 0.4) !important;
+}
+
+[class*="member-"] {
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="member-"]:hover {
+  background: rgba(139, 0, 0, 0.25) !important;
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.4) !important;
+  transform: translateX(-4px) !important;
+}
+
+/* ============================================
+   BUTTONS - SITH CRIMSON
+   ============================================ */
+button[class*="lookFilled"][class*="colorBrand"],
+button[class*="button-"][class*="colorBrand"] {
+  background: linear-gradient(135deg, #8b0000 0%, #a00000 100%) !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 20px rgba(139, 0, 0, 0.5) !important;
+}
+
+button[class*="lookFilled"][class*="colorBrand"]:hover,
+button[class*="button-"][class*="colorBrand"]:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 35px rgba(139, 0, 0, 0.8), 0 0 20px rgba(220, 20, 60, 0.4) !important;
+  background: linear-gradient(135deg, #a00000 0%, #dc143c 100%) !important;
+}
+
+/* ============================================
+   MODALS & POPOUTS
+   ============================================ */
+[class*="modal-"],
+[class*="root-"][class*="modal"] {
+  background: linear-gradient(135deg, #0f0000 0%, #050000 100%) !important;
+  border: 2px solid rgba(139, 0, 0, 0.6) !important;
+  box-shadow: 0 30px 80px rgba(139, 0, 0, 0.5) !important;
+}
+
+[class*="userPopout"],
+[class*="profilePanel"] {
+  background: linear-gradient(135deg, rgba(15, 0, 0, 0.99) 0%, rgba(5, 0, 0, 0.99) 100%) !important;
+  border: 2px solid rgba(139, 0, 0, 0.6) !important;
+  box-shadow: 0 25px 50px rgba(139, 0, 0, 0.5) !important;
+}
+
+/* ============================================
+   VOICE PANEL
+   ============================================ */
+[class*="container-"][class*="panels"],
+section[class*="panels"] {
+  background: linear-gradient(90deg, rgba(15, 0, 0, 0.98) 0%, rgba(5, 0, 0, 0.98) 100%) !important;
+  border-top: 2px solid rgba(139, 0, 0, 0.6) !important;
+  box-shadow: 0 -4px 20px rgba(139, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   SETTINGS
+   ============================================ */
+[class*="sidebarRegion"] {
+  background: linear-gradient(180deg, rgba(15, 0, 0, 0.98) 0%, rgba(5, 0, 0, 0.98) 100%) !important;
+  border-right: 2px solid rgba(139, 0, 0, 0.5) !important;
+}
+
+[class*="contentRegion"] {
+  background: rgba(5, 0, 0, 0.85) !important;
+}
+
+[class*="item-"][class*="side"] {
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="item-"][class*="side"]:hover {
+  background: rgba(139, 0, 0, 0.25) !important;
+  transform: translateX(4px) !important;
+}
+
+[class*="selected"][class*="side"] {
+  background: linear-gradient(90deg, rgba(139, 0, 0, 0.5) 0%, rgba(220, 20, 60, 0.3) 100%) !important;
+  border-left: 3px solid #dc143c !important;
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.4) !important;
+  color: #ffffff !important;
+}
+
+/* ============================================
+   SCROLLBARS - CRIMSON
+   ============================================ */
+::-webkit-scrollbar {
+  width: 14px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 0, 0, 0.6) !important;
+  border-radius: 10px !important;
+  margin: 4px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b0000 0%, #a00000 100%) !important;
+  border-radius: 10px !important;
+  border: 3px solid rgba(15, 0, 0, 0.6) !important;
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.6) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a00000 0%, #dc143c 100%) !important;
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.9), 0 0 10px rgba(220, 20, 60, 0.4) !important;
+}
+
+/* ============================================
+   MENTIONS & LINKS
+   ============================================ */
+[class*="mention"] {
+  background: rgba(139, 0, 0, 0.3) !important;
+  color: #ff6b6b !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid rgba(139, 0, 0, 0.4) !important;
+}
+
+[class*="mention"]:hover {
+  background: rgba(139, 0, 0, 0.5) !important;
+  color: #ff9999 !important;
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.6) !important;
+}
+
+a[class*="anchor"] {
+  color: #dc143c !important;
+}
+
+a[class*="anchor"]:hover {
+  color: #ff6b6b !important;
+  text-shadow: 0 0 10px rgba(139, 0, 0, 0.6) !important;
+}
+
+/* ============================================
+   REACTIONS
+   ============================================ */
+[class*="reaction-"] {
+  background: rgba(139, 0, 0, 0.2) !important;
+  border: 1px solid rgba(139, 0, 0, 0.5) !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="reaction-"]:hover {
+  background: rgba(139, 0, 0, 0.4) !important;
+  border-color: #dc143c !important;
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.6) !important;
+  transform: scale(1.08) !important;
+}
+
+/* ============================================
+   CODE BLOCKS
+   ============================================ */
+code,
+[class*="hljs"] {
+  background: rgba(15, 0, 0, 0.9) !important;
+  border: 1px solid rgba(139, 0, 0, 0.4) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.2) !important;
+}
+
+/* ============================================
+   EMBEDS
+   ============================================ */
+[class*="embed-"] {
+  border-left: 4px solid #8b0000 !important;
+  background: rgba(15, 0, 0, 0.5) !important;
+}
+
+/* ============================================
+   SEARCH BAR
+   ============================================ */
+[class*="searchBar"] {
+  background: rgba(15, 0, 0, 0.95) !important;
+  border: 2px solid rgba(139, 0, 0, 0.5) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+[class*="searchBar"]:focus-within {
+  border-color: #8b0000 !important;
+  box-shadow: 0 0 25px rgba(139, 0, 0, 0.6) !important;
+  background: rgba(139, 0, 0, 0.2) !important;
+}
+
+/* ============================================
+   SITH POWER ACCENTS
+   ============================================ */
+/* Subtle Sith symbol watermark */
+[class*="chatContent"]:before {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(139, 0, 0, 0.05) 0%, transparent 70%);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+  animation: sithPower 30s ease infinite;
+}
+
+@keyframes sithPower {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; }
+}

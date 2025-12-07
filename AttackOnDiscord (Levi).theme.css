@@ -1,0 +1,429 @@
+/**
+ * @name Attack On Discord (Levi)
+ * @author Apo
+ * @version 1.0.0
+ * @description Levi-inspired AOT theme with dark blue/steel accents
+ * @source https://github.com/Im-Apo/discord-themes/
+ * 
+ * @var range serverColumns "Server Columns: [default] = 1" [1, 1, 4, 1]
+ * @var range serverSize "Server Icon Size: [default] = 48px" [48, 30, 80, 2]
+ * @var range serverGap "Server Icon Gap: [default] = 8px" [8, 0, 20, 2]
+ * @var range chatTransparency "Chat Transparency: [default] = 0.7" [0.7, 0.3, 1.0, 0.05]
+ * @var range sidebarTransparency "Sidebar Transparency: [default] = 0.8" [0.8, 0.3, 1.0, 0.05]
+ * @var range borderBrightness "Border Brightness: [default] = 0.3" [0.3, 0, 1.0, 0.1]
+ * @var checkbox showEmblem "Show Scout Regiment Emblem: [default] = Yes" 1
+ * @var checkbox compactMode "Compact Message Mode: [default] = No" 0
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;500;700&display=swap');
+@import url('https://l-ratio.github.io/OperaGXTheme/release/main.css');
+
+:root {
+  /* Background Settings */
+  --background: url('https://i.pinimg.com/736x/b8/df/fd/b8dffd6e68a140af99157496187e4256.jpg');
+  --background-behind-appmount: 15, 25, 40;
+  --background-accent-color-1: 60, 90, 140, 1;
+  
+  /* Levi Color Scheme - Dark Blue/Steel */
+  --accent-color-1: 60, 90, 140;        /* Primary dark blue */
+  --accent-color-2: 80, 110, 160;       /* Lighter blue */
+  --accent-color-3: 100, 130, 180;      /* Highlight blue */
+  --border-brightness: 0.3;
+  --dark-background-color: 15, 25, 40;
+  --darker-background-color: 10, 15, 25;
+  
+  /* Transparency Settings */
+  --wintitlebar-transparency: 0.95;
+  --header-transparency: 0.85;
+  --serverlist-transparency: 0.75;
+  --channels-transparency: 0.8;
+  --chat-transparency: 0.7;
+  --memberlist-transparency: 0.85;
+  
+  /* NO BLUR - Performance optimization */
+  --wintitlebar-background-blur: 0px;
+  --header-background-blur: 0px;
+  --serverlist-background-blur: 0px;
+  --channels-background-blur: 0px;
+  --chat-background-blur: 0px;
+  --memberlist-background-blur: 0px;
+  
+  /* Font Settings */
+  --customFont: inherit;
+  --codeBlocksCustomFont: inherit;
+  
+  /* Text Colors */
+  --fullwhite-font: 240, 245, 255;
+  --normal-font: 215, 225, 240;
+  --normal-hover-font: 235, 245, 255;
+  --muted-font: 145, 160, 180;
+  --link-text: 100, 130, 180;
+  
+  /* Theme Colors */
+  --gx-red: 60, 90, 140;
+  --gx-red-2: 80, 110, 160;
+  --gx-yellow: 100, 130, 180;
+  --gx-yellow-2: 120, 150, 200;
+  --gx-green: 60, 90, 140;
+  --gx-green-2: 80, 110, 160;
+  --font-in-accent: 240, 245, 255;
+  --category-name-transform: uppercase;
+  
+  /* Input Settings */
+  --chatbox-transparency: 0.9;
+  --chatbox-focused-transparency: 0.95;
+  --other-highlighted-transparency: 0.9;
+  --other-transparency: 0.85;
+  
+  /* Component Colors */
+  --wintitlebar-transparency-color: var(--dark-background-color);
+  --wintb-focused-alpha: 1;
+  --wintb-focused-color: var(--darker-background-color);
+  --header-transparency-color: var(--dark-background-color);
+  --serverlist-transparency-color: var(--dark-background-color);
+  --channels-transparency-color: var(--dark-background-color);
+  --chat-transparency-color: var(--dark-background-color);
+  --memberlist-transparency-color: var(--dark-background-color);
+  
+  /* Server List Customization */
+  --server-columns: 1;
+  --server-size: 48px;
+  --server-gap: 8px;
+  
+  /* Emblem Settings */
+  --show-emblem: block;
+  
+  /* Message Spacing */
+  --message-spacing: 0.5em;
+}
+
+/* ============================================
+   DISCORD FONT SUPPORT
+   ============================================ */
+* {
+  font-family: var(--font-primary, "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif) !important;
+}
+
+code, pre {
+  font-family: var(--font-code, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace) !important;
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+[class*="listItem"],
+[class*="chatContent"],
+[class*="panels"] {
+  will-change: auto;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   IMPROVED VISIBILITY & BORDERS
+   ============================================ */
+[class*="sidebar"][class*="container"] {
+  border-right: 2px solid rgba(60, 90, 140, 0.3);
+}
+
+[class*="membersWrap"] {
+  border-left: 2px solid rgba(60, 90, 140, 0.3);
+}
+
+[class*="listItem"] [class*="wrapper"] {
+  box-shadow: 0 0 8px rgba(60, 90, 140, 0.3);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+[class*="listItem"] [class*="wrapper"]:hover {
+  box-shadow: 0 0 15px rgba(80, 110, 160, 0.6);
+  transform: translateY(-2px);
+}
+
+[class*="scroller"][class*="scrollerBase"] {
+  border: none !important;
+  outline: none !important;
+}
+
+/* ============================================
+   CUSTOM HOME BUTTON - LEVI
+   ============================================ */
+[class*="listItem"] [class*="homeIcon"] path,
+[class*="listItem"] [class*="homeIcon"] svg {
+  display: none;
+}
+
+[class*="listItem"] [class*="homeIcon"] {
+  background: url('https://i.pinimg.com/736x/b8/df/fd/b8dffd6e68a140af99157496187e4256.jpg') center/cover no-repeat !important;
+  width: 48px !important;
+  height: 48px !important;
+}
+
+[class*="listItem"] [data-list-item-id="guildsnav___home"] [class*="wrapper"] {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* ============================================
+   CHANNEL ENHANCEMENTS
+   ============================================ */
+[class*="containerDefault"] {
+  background: rgba(15, 25, 40, 0.3);
+  border-radius: 4px;
+  margin: 2px 8px;
+  transition: background 0.15s ease, border-left 0.15s ease;
+  border-left: 3px solid transparent;
+}
+
+[class*="containerDefault"]:hover {
+  background: rgba(60, 90, 140, 0.25);
+  border-left-color: rgba(80, 110, 160, 0.5);
+}
+
+[class*="containerDefault"][class*="selected"] {
+  background: rgba(60, 90, 140, 0.4);
+  border-left: 3px solid rgb(80, 110, 160);
+  box-shadow: 0 0 10px rgba(60, 90, 140, 0.2);
+}
+
+[class*="unread"] {
+  border-left-color: rgb(80, 110, 160) !important;
+}
+
+[class*="voiceUser"] {
+  background: rgba(60, 90, 140, 0.15);
+  border-radius: 4px;
+  margin: 2px 4px;
+  padding: 2px;
+}
+
+/* ============================================
+   CATEGORY HEADERS
+   ============================================ */
+[class*="container"][class*="clickable"] h2 {
+  color: rgba(100, 130, 180, 0.9);
+  font-weight: 600;
+  text-transform: var(--category-name-transform);
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(60, 90, 140, 0.3);
+}
+
+/* ============================================
+   ENHANCED CHAT AREA
+   ============================================ */
+[class*="message"][class*="cozyMessage"] {
+  margin-bottom: var(--message-spacing);
+}
+
+[class*="message"][class*="cozyMessage"]:hover {
+  background: rgba(60, 90, 140, 0.08);
+  border-radius: 4px;
+}
+
+[class*="divider"] {
+  border-color: rgba(60, 90, 140, 0.3);
+}
+
+[class*="channelTextArea"] {
+  background: rgba(15, 25, 40, 0.6);
+  border: 1px solid rgba(60, 90, 140, 0.3);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+[class*="channelTextArea"]:focus-within {
+  border-color: rgba(80, 110, 160, 0.6);
+  box-shadow: 0 0 15px rgba(60, 90, 140, 0.3);
+  background: rgba(15, 25, 40, 0.7);
+}
+
+/* ============================================
+   MEMBER LIST ENHANCEMENTS
+   ============================================ */
+[class*="member"]:hover {
+  background: rgba(60, 90, 140, 0.15);
+  border-radius: 4px;
+}
+
+[class*="member"][class*="selected"] {
+  background: rgba(60, 90, 140, 0.25);
+  border-radius: 4px;
+}
+
+/* ============================================
+   EMBEDS & ATTACHMENTS
+   ============================================ */
+[class*="embed"] {
+  border-left: 4px solid rgb(60, 90, 140);
+  background: rgba(15, 25, 40, 0.4);
+}
+
+/* ============================================
+   SCOUT REGIMENT EMBLEM WATERMARK
+   ============================================ */
+[class*="chatContent"]:before {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: url('https://i.pinimg.com/originals/01/6d/a7/016da73b8f5a9b05a86ca5e0df2e3ba3.png') center/contain no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+  display: var(--show-emblem);
+}
+
+[class*="panels"]:after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: url('https://i.pinimg.com/originals/01/6d/a7/016da73b8f5a9b05a86ca5e0df2e3ba3.png') center/contain no-repeat;
+  opacity: 0.25;
+  pointer-events: none;
+  display: var(--show-emblem);
+}
+
+/* ============================================
+   USER POPOUTS
+   ============================================ */
+[class*="userPopout"] {
+  border: 1px solid rgba(60, 90, 140, 0.3);
+}
+
+[class*="profileBanner"] {
+  border-bottom: 2px solid rgba(60, 90, 140, 0.5);
+}
+
+/* ============================================
+   SCROLLBARS
+   ============================================ */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 25, 40, 0.3);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(60, 90, 140, 0.5);
+  border-radius: 8px;
+  border: 2px solid rgba(15, 25, 40, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(80, 110, 160, 0.7);
+}
+
+/* ============================================
+   BUTTONS & INTERACTIONS
+   ============================================ */
+[class*="button"] {
+  transition: all 0.2s ease;
+}
+
+[class*="lookFilled"][class*="colorBrand"] {
+  background-color: rgb(60, 90, 140);
+  transition: all 0.2s ease;
+}
+
+[class*="lookFilled"][class*="colorBrand"]:hover {
+  background-color: rgb(80, 110, 160);
+  box-shadow: 0 0 10px rgba(60, 90, 140, 0.5);
+}
+
+/* ============================================
+   MODALS & POPUPS
+   ============================================ */
+[class*="modal"] {
+  border: 1px solid rgba(60, 90, 140, 0.3);
+}
+
+[class*="modalHeader"] {
+  border-bottom: 2px solid rgba(60, 90, 140, 0.3);
+}
+
+/* ============================================
+   MENTIONS & NOTIFICATIONS
+   ============================================ */
+[class*="mention"] {
+  background-color: rgba(60, 90, 140, 0.15);
+  color: rgb(120, 150, 200);
+  padding: 0 2px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+[class*="mention"]:hover {
+  background-color: rgba(60, 90, 140, 0.25);
+  color: rgb(140, 170, 220);
+}
+
+[class*="unreadPill"] {
+  background-color: rgb(60, 90, 140);
+  box-shadow: 0 0 10px rgba(60, 90, 140, 0.5);
+}
+
+/* ============================================
+   SEARCH BAR
+   ============================================ */
+[class*="searchBar"] {
+  background: rgba(15, 25, 40, 0.6);
+  border: 1px solid rgba(60, 90, 140, 0.3);
+  border-radius: 4px;
+}
+
+[class*="searchBar"]:focus-within {
+  border-color: rgba(80, 110, 160, 0.6);
+}
+
+/* ============================================
+   VOICE CHANNEL CONTROLS
+   ============================================ */
+[class*="container"][class*="connection"] {
+  background: rgba(15, 25, 40, 0.7);
+  border-top: 2px solid rgba(60, 90, 140, 0.3);
+}
+
+/* ============================================
+   SETTINGS WINDOW
+   ============================================ */
+[class*="contentRegion"] {
+  background: rgba(15, 25, 40, 0.3);
+}
+
+[class*="sidebarRegion"] {
+  background: rgba(10, 15, 25, 0.5);
+  border-right: 2px solid rgba(60, 90, 140, 0.3);
+}
+
+[class*="selected"][class*="side"] {
+  background: rgba(60, 90, 140, 0.3);
+  border-left: 3px solid rgb(80, 110, 160);
+}
+
+/* Levi quote (hidden) */
+[class*="app"]::after {
+  content: "Give up on your dreams and die";
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 10px;
+  color: rgba(60, 90, 140, 0.3);
+  font-style: italic;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-slow) ease;
+}
