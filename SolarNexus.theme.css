@@ -1,7 +1,7 @@
 /**
  * @name Solar Nexus
  * @description A vibrant cyberpunk theme with orange/red accents and smooth animations
- * @author Apo (Modified)
+ * @author Apo 
  * @version 1.0.0
  * @source https://github.com/Im-Apo/discord-themes/
  */
@@ -357,7 +357,6 @@ section[class*="panels"] {
 [class*="mention"] {
   background: rgba(255, 102, 0, 0.25) !important;
   color: #ff9966 !important;
-  padding: 0 4px !important;
   border-radius: 4px !important;
   transition: all 0.2s ease !important;
   border: 1px solid rgba(255, 102, 0, 0.3) !important;

@@ -373,7 +373,6 @@ code, pre {
 [class*="mention"] {
   background-color: rgba(70, 130, 200, 0.15);
   color: rgb(110, 170, 240);
-  padding: 0 2px;
   border-radius: 3px;
   transition: all 0.15s ease;
 }
